@@ -5,6 +5,8 @@ import secrets
 from flask_migrate import Migrate
 from flask_smorest import Api
 from flask_jwt_extended import JWTManager
+from dotenv import load_dotenv 
+
 
 os.environ["FLASK_APP"] = "app.py"
 
@@ -20,6 +22,7 @@ from resources.user import blp as UserBlueprint
 
 def create_app(db_url=None):
     app = Flask(__name__)
+    load_dotenv()
     
  
 
